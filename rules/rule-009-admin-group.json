@@ -1,0 +1,19 @@
+{
+  "rule_name": "Sensitive Group Modification",
+  "description": "Detects adding users to admin groups outside business hours",
+  "log_source": "Windows Security Logs",
+  "conditions": [
+    {
+      "event": "User Added to Group",
+      "group": ["Domain Admins", "Enterprise Admins"],
+      "time": "outside business hours"
+    }
+  ],
+  "response": {
+    "create_offense": true,
+    "severity": 9,
+    "relevance": 9,
+    "credibility": 8,
+    "magnitude": 9
+  }
+}
