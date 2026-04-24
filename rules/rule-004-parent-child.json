@@ -1,0 +1,18 @@
+{
+  "rule_name": "Suspicious Parent-Child Process",
+  "description": "Detects wmiprvse spawning PowerShell or CMD",
+  "log_source": "Sysmon Logs",
+  "conditions": [
+    {
+      "parent_process": "wmiprvse.exe",
+      "child_process": ["powershell.exe", "cmd.exe"]
+    }
+  ],
+  "response": {
+    "create_offense": true,
+    "severity": 7,
+    "relevance": 8,
+    "credibility": 8,
+    "magnitude": 7
+  }
+}
