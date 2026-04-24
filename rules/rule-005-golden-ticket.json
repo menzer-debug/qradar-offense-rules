@@ -1,0 +1,18 @@
+{
+  "rule_name": "Golden Ticket Detection",
+  "description": "Detects TGS requests without prior AS request",
+  "log_source": "Kerberos Logs",
+  "conditions": [
+    {
+      "event": "TGS-REQ",
+      "without_previous": "AS-REQ"
+    }
+  ],
+  "response": {
+    "create_offense": true,
+    "severity": 10,
+    "relevance": 9,
+    "credibility": 8,
+    "magnitude": 10
+  }
+}
