@@ -1,0 +1,20 @@
+{
+  "rule_name": "DCShadow Attack Detection",
+  "description": "Detects DRSUAPI RPC calls from non-domain controller systems",
+  "log_source": "Active Directory Logs",
+  "conditions": [
+    {
+      "type": "network_activity",
+      "protocol": "RPC",
+      "service": "DRSUAPI",
+      "source_not_in": "Domain Controllers"
+    }
+  ],
+  "response": {
+    "create_offense": true,
+    "severity": 9,
+    "relevance": 9,
+    "credibility": 8,
+    "magnitude": 9
+  }
+}
