@@ -1,0 +1,17 @@
+{
+  "rule_name": "DNS Exfiltration Detection",
+  "description": "Detects unusually long DNS queries",
+  "log_source": "DNS Logs",
+  "conditions": [
+    {
+      "query_length": ">200"
+    }
+  ],
+  "response": {
+    "create_offense": true,
+    "severity": 8,
+    "relevance": 7,
+    "credibility": 7,
+    "magnitude": 8
+  }
+}
