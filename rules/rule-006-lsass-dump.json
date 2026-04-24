@@ -1,0 +1,18 @@
+{
+  "rule_name": "LSASS Memory Dump Detection",
+  "description": "Detects access to LSASS process memory",
+  "log_source": "Sysmon Event ID 10",
+  "conditions": [
+    {
+      "target_process": "lsass.exe",
+      "access_attempt": true
+    }
+  ],
+  "response": {
+    "create_offense": true,
+    "severity": 10,
+    "relevance": 9,
+    "credibility": 9,
+    "magnitude": 10
+  }
+}
