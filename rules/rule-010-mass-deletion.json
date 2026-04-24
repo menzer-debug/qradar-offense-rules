@@ -1,0 +1,19 @@
+{
+  "rule_name": "Mass File Deletion Detection",
+  "description": "Detects rapid file deletions indicating ransomware activity",
+  "log_source": "File System Logs",
+  "conditions": [
+    {
+      "event": "File Deleted",
+      "threshold": 50,
+      "time_window": "1 minute"
+    }
+  ],
+  "response": {
+    "create_offense": true,
+    "severity": 10,
+    "relevance": 9,
+    "credibility": 8,
+    "magnitude": 10
+  }
+}
