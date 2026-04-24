@@ -1,0 +1,6 @@
+{
+  "name": "New User Created - Alert",
+  "enabled": true,
+  "type": "ADE",
+  "content": "Apply New User Created on events which are detected by the Local system and when the event ID is 4720"
+}
