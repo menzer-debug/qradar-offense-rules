@@ -1,9 +1,8 @@
 import requests
 import os
 import json
-
-QRADAR_IP = os.getenv('QRADAR_IP')
-TOKEN = os.getenv('QRADAR_TOKEN')
+QRADAR_IP = os.getenv('QRADAR_CONSOLE_IP')
+TOKEN = os.getenv('QRADAR_SEC_TOKEN')
 
 headers = {
     'SEC': TOKEN,
