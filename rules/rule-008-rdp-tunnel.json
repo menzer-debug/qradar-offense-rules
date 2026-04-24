@@ -1,0 +1,19 @@
+{
+  "rule_name": "RDP Tunneling Detection",
+  "description": "Detects RDP traffic over port 443",
+  "log_source": "Network Flow",
+  "conditions": [
+    {
+      "protocol": "RDP",
+      "port": 443,
+      "external_destination": true
+    }
+  ],
+  "response": {
+    "create_offense": true,
+    "severity": 9,
+    "relevance": 8,
+    "credibility": 8,
+    "magnitude": 9
+  }
+}
