@@ -16,7 +16,8 @@ def upload_rule(rule_file):
         with open(rule_file, 'r') as f:
             rule_data = json.load(f)
 
-        url = f"https://{QRADAR_IP}/api/config/analytics/rules"
+
+url = f"https://{QRADAR_IP}/api/analytics/custom_rules"
 
         response = requests.post(
             url,
